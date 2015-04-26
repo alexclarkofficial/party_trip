@@ -38,6 +38,6 @@ class TripController < ApplicationController
 
   private
     def trip_parameters
-      params.require(:trip).permit(:start_date, :end_date, :max_cost, :voting_active?, :departure_airport)
+      params.require(:trip).permit(:start_date, :end_date, :max_cost, :voting_active?, :departure_airport, :duration, :min_cost)
     end
 end
