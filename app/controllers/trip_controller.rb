@@ -19,7 +19,7 @@ class TripController < ApplicationController
     @trip.start_date = Date.parse(trip_parameters[:start_date])
     @trip.max_cost = trip_parameters[:max_cost].to_i
     @trip.save
-    locations_data = HTTParty.get(get_locations_url, {apikey: 'QW3ItzI2KsWJQ8YHg2ysbapNVMc2bteI'})
+    locations_data = HTTParty.get(get_locations_url)
     all_locations = JSON.parse(locations_data.to_json)["results"]
     20.times do ||
       location = all_locations.sample

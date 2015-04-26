@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
   belongs_to :trip
+  has_many :ratings
 
   def votes_count
     votes.length
