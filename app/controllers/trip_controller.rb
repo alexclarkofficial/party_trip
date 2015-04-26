@@ -22,7 +22,7 @@ class TripController < ApplicationController
     all_locations = JSON.parse(locations_data.to_json)["results"]
     20.times do ||
       location = all_locations.sample
-      Location.create(name: location["destination"], cost: location["price"].to_i)
+      @trip.locations.create(name: location["destination"], cost: location["price"].to_i)
     end
     respond_with @trip
   end
